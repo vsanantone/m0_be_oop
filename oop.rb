@@ -13,12 +13,41 @@
 
 
 #  Write a Dragon class
-#  it should have a dynamic name attribute (string)
+#  it should have a dynamic name attribute (string) atrributes imply the initialize class
 #  it should have a dynamic rider attribute (string)
 #  it should have a dynamic color attribute (string)
 #  it should have a is_hungry attribute that is true by default
+
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 
+class Dragon
+    #method that takes a parameters
+    attr_reader :name, :rider
+    def initialize(name, rider, color)
+        @name = name
+        @rider = rider
+        @color = color
+        @is_hungry = true
+        @times_eaten = 0
+    end
+    def eat
+        @times_eaten += 1
+        if @times_eaten >= 4
+            @is_hungry = false
+        end
+    end
+end
+
+# passing in argument
+dragon1 = Dragon.new("Sharptooth", "Victor", "red")
+dragon1.eat
+dragon1.eat
+dragon1.eat
+dragon1.eat
+dragon1.eat
+p dragon1
+p dragon1.name
+p dragon1.rider
 
 #  Write a Hobbit class
 #  it should have a dynamic name attribute (string)
